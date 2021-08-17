@@ -1,0 +1,19 @@
+<header id="header">
+  <div id="nav-white-space"></div>
+  <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white shadow-sm justify-content-between" id="transmenu">
+      <div class="container"><a class="navbar-brand logo" id="navbar-brand" href="{{ url_for('index')}}">분리수GO!</a>
+          <ul class="navbar-nav flex-row mx-auto">
+              <li class="nav-item pe-4"><a class="nav-link disabled" href="{{ url_for('loginmethod') }}">로그인 방법</a></li>
+              <li class="nav-item pe-4"><a class="nav-link disabled" href="{{ url_for('login') }}">QR로그인</a></li>
+              <li class="nav-item pe-4"><a class="nav-link disabled" href="{{ url_for('classification') }}">물체 식별</a></li>
+              <li class="nav-item pe-4"><a class="nav-link disabled" href="{{ url_for('analyze') }}">분석</a></li>
+              <li class="nav-item pe-4"><a class="nav-link disabled" href="{{ url_for('report') }}">리포트</a></li>
+              <li class="nav-item pe-4"><a class="nav-link disabled" href="{{ url_for('success')}}">성공</a></li>
+          </ul>
+      </div>
+  </nav>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</header>
+
+

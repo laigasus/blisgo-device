@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  {% include 'head.html' %}
+</head>
+
+<body>
+  {% include 'header.html' %}
+
+  <main class="d-flex d-xxl-flex justify-content-center align-items-center align-content-center main">
+    <div class="container-fluid justify-content-center align-items-center align-content-center d-flex align-items-center" id="analyze">
+      <article class="pb-2">
+        <div class="row">
+          <div class="col-md-6 text-center">
+            <!-- yolov5 분석후 이미지 값 출력 -->
+            {%if draw%}
+            <img class="img-fluid shadow-sm small-preview" src="{{draw}}">
+            {%else%}
+            <img class="img-fluid shadow-sm small-preview" src="https://shopping-phinf.pstatic.net/main_2483836/24838366019.20201114183914.jpg?type=f640"
+              class="img-fluid shadow-sm small-preview">
+            {% endif %}
+          </div>
+          <div class="col-md-6 align-self-center">
+            <div class="row">
+              <div class="col">
+                <h1>분석 결과</h1>
+              </div>
+            </div>
+            <div class="row">
+              {%if result=="cardboard" %}
+              <div class="col align-self-center p-2">
+                <img src="{{ url_for('static', filename='images/sortclass/cardboard.jpg') }}" width="150px">
+              </div>
+              {%elif result=="cartons"%}
+              <div class="col align-self-center p-2">
+                <img src="{{ url_for('static', filename='images/sortclass/carton.jpg') }}" width="150px">
+              </div>
+              {%elif result=="glass"%}
+              <div class="col align-self-center p-2">
+                <img src="{{ url_for('static', filename='images/sortclass/glass.jpg') }}" width="150px">
+              </div>
+              {%elif result=="metal"%}
+              <div class="col align-self-center p-2">
+                <img src="{{ url_for('static', filename='images/sortclass/metal.jpg') }}" width="150px">
+              </div>
+              {%elif result=="plastic"%}
+              <div class="col align-self-center p-2">
+                <img src="{{ url_for('static', filename='images/sortclass/plastic.jpg') }}" width="150px">
+              </div>
+              {%else%}
+              <div class="col align-self-center p-2">
+                <img src="{{ url_for('static', filename='images/sortclass/none.jpg') }}" width="150px">
+              </div>
+              {% endif %}
+              <div class="col align-self-center p-2">
+                <h2>정확도</h2>
+                <!-- yolov5 분석후 정확도 값 출력 -->
+                {%if confidence%}
+                <h2>{{confidence}}%</h2>
+                {%endif%}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col p-2">
+                <div class="btn-group" role="group">
+                  <a class="btn btn-secondary" role="button"href="{{url_for('classification') }}">다시하기</a>
+                  <a class="btn btn-success" role="button" href="{{url_for('success')}}">종료하기</a>
+                </div>
+              </div>
+              <div class="col-12">
+                <hr class="mt-1 mb-1">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <span class="pr-2">예상했던 결과와 다른가요?</span>
+                <form class="d-inline-flex" action="{{ url_for('reportPOST')}}" method="POST" enctype="multipart/form-data">
+                  <textarea id="textArea" name="textArea" cols="110" rows="10" style="display: none;">{{draw}}</textarea>
+                  <textarea id="textArea2" name="textArea2" cols="110" rows="10" style="display: none;">{{img}}</textarea>
+                  <button class="btn btn-link analyze-button-report" id="predict" type="submit" value="report" onclick="return save();">Report</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>  
+
+  <script>
+    $(document).ready(function(){
+      $('.navbar-nav > li:nth-child(4) > a').addClass('active');
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

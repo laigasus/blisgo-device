@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>BlisGO! Device</title>
+  {% include 'head.html' %}
+</head>
+<body>
+  <header id="header-index" style="background-image: url(https://source.unsplash.com/1920x1920/daily?nature,water)center / cover no-repeat);background-position: center;background-size: cover;">
+      <div class="container-fluid d-flex justify-content-center align-items-center d-flex align-items-center" id="highlight-index">
+          <div class="row">
+              <div class="col text-center text-white">
+                  <h1>분리수GO!</h1>
+                  <p class="lead">분리배출을 더욱 편리하게!</p><a class="btn btn-primary btn-lg" role="button" href="{{ url_for('loginmethod') }}">GO!</a>
+              </div>
+          </div>
+      </div>
+  </header>
+  <footer class="d-none d-lg-block" id="footer" style="background: #171b27;padding: 40px;">
+      <section>
+          <div class="row">
+              <div class="col" style="text-align: center;"><a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i class="fab fa-facebook-f"></i></a><a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i class="fab fa-twitter"></i></a><a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i class="fab fa-google"></i></a><a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i class="fab fa-instagram"></i></a><a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i class="fab fa-github"></i></a></div>
+          </div>
+          <div class="row text-center" style="padding: 15px;">
+              <div class="col align-self-center">
+                  <p id="copyright-1" class="copyright" style="color: var(--bs-light);margin-bottom: 0px;">Team&nbsp;Hanok. 분리수GO! Project © 2021</p>
+              </div>
+          </div>
+      </section>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

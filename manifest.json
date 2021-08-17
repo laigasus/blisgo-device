@@ -1,0 +1,20 @@
+{
+    "short_name": "분리수GO!",
+    "name": "분리수GO-장치",
+    "icons": [
+        {
+            "src": "/assets/img/favicon192x192.png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/assets/img/favicon512x512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "index.html",
+    "display": "standalone"
+}

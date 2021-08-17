@@ -1,0 +1,29 @@
+#login-method:hover {
+  filter: contrast(100%);
+}
+
+#login-method {
+  filter: contrast(20%);
+}
+
+#nav-white-space {
+  height: 56px!important;
+}
+
+.main {
+  height: 88vh;
+}
+
+#header-index {
+  background: url(https://source.unsplash.com/2048x1536/daily?waste,garbage,trash)center / cover no-repeat;
+}
+
+#highlight-index {
+  height: 100vh;
+  background-color: rgba(0,0,0,0.4);
+}
+
+#footer {
+  background: #171b27;
+}
+
